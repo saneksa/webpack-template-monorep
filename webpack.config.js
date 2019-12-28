@@ -2,12 +2,14 @@ const path = require("path");
 const webpack = require("webpack");
 const merge = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const minimizer = require("./webpack/minimizer");
 const devServer = require("./webpack/devServer");
 const overlay = require("./webpack/overlay");
 const bundleAnalyzer = require("./webpack/bundleAnalyzer");
 const duplicatePackage = require("./webpack/duplicatePackage");
+const styles = require("./webpack/styles");
 
 const PATHS = {
   packages: path.join(__dirname, "packages"),
@@ -61,6 +63,7 @@ const common = merge([
       ]
     },
     plugins: [
+      new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: `${PATHS.publicPath}/index.html`,
         inject: true,
@@ -74,8 +77,12 @@ const common = merge([
         measureCompilationTime: true,
         async: false
       })
-    ]
-  }
+    ],
+    performance: {
+      hints: "warning"
+    }
+  },
+  styles
 ]);
 
 module.exports = function(env, argv) {

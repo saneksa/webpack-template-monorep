@@ -1,4 +1,5 @@
 const TerserWebpackPlugin = require("terser-webpack-plugin");
+const OptimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
   optimization: {
@@ -51,7 +52,8 @@ module.exports = {
         // Enable file caching
         cache: true,
         sourceMap: false
-      })
+      }),
+      new OptimizeCssAssetsWebpackPlugin({})
     ]
   }
 };

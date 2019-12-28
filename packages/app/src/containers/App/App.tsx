@@ -1,12 +1,19 @@
 import * as React from "react";
+import "./App.less";
+import "./App.css";
+import "./App.sass";
 
 class App extends React.PureComponent {
   private getContent() {
-    return <div>Content</div>;
+    return <div className=".ccc">Content</div>;
   }
 
   public render() {
-    return <div>{this.getContent()}</div>;
+    return (
+      <div className="vvv">
+        <div className="cds">{this.getContent()}</div>
+      </div>
+    );
   }
 }
 
