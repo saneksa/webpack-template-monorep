@@ -3,13 +3,15 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "jsx": "react",
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "strictNullChecks": true,
-    "target": "ESNext",
+    "strict": true,
+    "target": "ES2015",
+    "checkJs": false,
     "module": "CommonJS",
     "baseUrl": "./packages",
-    "allowSyntheticDefaultImports": false
+    "rootDir": ".",
+    "allowSyntheticDefaultImports": false,
+    "locale": "ru",
+    "types": ["@types/webpack-env"]
   },
-  "include": ["./packages/**/*"]
+  "include": ["packages"]
 }

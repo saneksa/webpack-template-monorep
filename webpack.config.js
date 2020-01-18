@@ -10,6 +10,7 @@ const overlay = require("./webpack/overlay");
 const bundleAnalyzer = require("./webpack/bundleAnalyzer");
 const duplicatePackage = require("./webpack/duplicatePackage");
 const styles = require("./webpack/styles");
+const _ = require("lodash");
 
 const PATHS = {
   packages: path.join(__dirname, "packages"),
@@ -18,80 +19,90 @@ const PATHS = {
   analyzePort: 8888
 };
 
-const common = merge([
-  {
-    entry: {
-      index: `${PATHS.packages}/app/src/index.tsx`
-    },
-    output: {
-      path: PATHS.buildPath,
-      filename: "./static/js/[name].js",
-      chunkFilename: "static/js/[id].js"
-    },
-    optimization: {
-      splitChunks: {
-        cacheGroups: {
-          common: {
-            chunks: "all",
-            name: true,
-            maxSize: 1024 * 244
-          }
+const common = mode => {
+  const isDev = mode === "development";
+
+  return merge([
+    {
+      entry: {
+        index: `${PATHS.packages}/expander/src/index.ts`
+      },
+      output: {
+        path: PATHS.buildPath,
+        filename: isDev ? "./static/js/[name].js" : "static/js/[contenthash].js",
+        chunkFilename: isDev ? "./static/js/[name].[id].js" : "static/js/[contenthash].js"
+      },
+      optimization: {
+        splitChunks: {
+          chunks: "all",
+          maxSize: 1024 * 244
+        },
+        runtimeChunk: {
+          name: entrypoint => `runtime-${entrypoint.name}`
         }
       },
-      runtimeChunk: {
-        name: entrypoint => `runtime-${entrypoint.name}`
+      resolve: {
+        extensions: [".ts", ".tsx", ".js", ".jsx"]
+      },
+      module: {
+        rules: [
+          {
+            test: /\.(js|jsx|ts|tsx)$/,
+            exclude: /node_modules/,
+            use: [
+              {
+                loader: "ts-loader",
+                options: {
+                  // disable type checker - we will use it in fork plugin
+                  transpileOnly: true
+                }
+              }
+            ]
+          }
+        ]
+      },
+      plugins: [
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+          template: `${PATHS.publicPath}/index.html`,
+          inject: true,
+          favicon: `${PATHS.publicPath}/taxi.ico`,
+          minify: {
+            minifyCSS: !isDev,
+            minifyJS: !isDev,
+            removeComments: !isDev
+          }
+        }),
+        new ForkTsCheckerWebpackPlugin({
+          // eslint: true,
+          tsconfig: path.resolve(__dirname, "tsconfig.json"),
+          useTypescriptIncrementalApi: true,
+          checkSyntacticErrors: true,
+          measureCompilationTime: true,
+          async: false
+        }),
+        new webpack.DefinePlugin({
+          "process.env": {
+            NODE_ENV: JSON.stringify(mode)
+          }
+        })
+      ],
+      performance: {
+        hints: "warning"
       }
     },
-    resolve: {
-      extensions: [".ts", ".tsx", ".js", ".jsx"]
-    },
-    module: {
-      rules: [
-        {
-          test: /\.(js|jsx|ts|tsx)$/,
-          exclude: /node_modules/,
-          use: [
-            {
-              loader: "ts-loader",
-              options: {
-                // disable type checker - we will use it in fork plugin
-                transpileOnly: true
-              }
-            }
-          ]
-        }
-      ]
-    },
-    plugins: [
-      new CleanWebpackPlugin(),
-      new HtmlWebpackPlugin({
-        template: `${PATHS.publicPath}/index.html`,
-        inject: true,
-        favicon: `${PATHS.publicPath}/taxi.ico`
-      }),
-      new ForkTsCheckerWebpackPlugin({
-        // eslint: true,
-        tsconfig: path.resolve(__dirname, "tsconfig.json"),
-        useTypescriptIncrementalApi: true,
-        checkSyntacticErrors: true,
-        measureCompilationTime: true,
-        async: false
-      })
-    ],
-    performance: {
-      hints: "warning"
-    }
-  },
-  styles
-]);
+    styles(isDev)
+  ]);
+};
 
 module.exports = function(env, argv) {
   if (argv.mode === "production") {
-    return merge([common, minimizer]);
+    return merge([common(argv.mode), minimizer]);
   }
+
   if (argv.mode === "development") {
     return merge([
-      common,
+      common(argv.mode),
       devServer(),
       overlay,
       bundleAnalyzer(PATHS.bundleAnalyzer),
