@@ -1,7 +1,7 @@
 import * as React from "react";
-import { render } from "react-dom";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import Expander from "@monorep/expander/src/expander";
+import { Route } from "react-router-dom";
+import { Expander } from "@monorep/expander/src/Expander";
+import { ModuleExpander, IModuleExpander } from "@monorep/expander/src/ModuleExpander";
 
 const app2GetRoutes = () => {
   return [
@@ -10,6 +10,6 @@ const app2GetRoutes = () => {
   ];
 };
 
-Expander.getInstance()?.expandRoutes(app2GetRoutes());
+class App2Module extends ModuleExpander implements IModuleExpander {}
 
-console.warn(Expander.getInstance().getRoutes());
+Expander.getInstance().expandModules(new App2Module({ routes: app2GetRoutes() }));

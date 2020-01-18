@@ -1,9 +1,11 @@
-import { merge, isFunction, isArray } from "lodash";
+import { isFunction, isArray } from "lodash";
+import { ModuleExpander } from "./ModuleExpander";
 
-class Expander {
+export class Expander {
   private static instance: Expander;
   private routes: JSX.Element[] = [];
   private entrypointList: (() => void)[] = [];
+  private modules: ModuleExpander[] = [];
 
   public static getInstance(): Expander {
     if (Expander.instance) {
@@ -17,7 +19,7 @@ class Expander {
 
   private constructor() {}
 
-  public expandRoutes(routesConfig: JSX.Element | JSX.Element[]) {
+  private expandRoutes(routesConfig: JSX.Element | JSX.Element[]) {
     if (isArray(routesConfig)) {
       this.routes.push(...routesConfig);
     } else {
@@ -27,13 +29,28 @@ class Expander {
     return this;
   }
 
-  public expandEntryPoint(entrypoint: () => void) {
-    this.entrypointList.push(entrypoint);
+  private expandEntryPoint(entrypoint: (() => void) | null) {
+    if (entrypoint) {
+      this.entrypointList.push(entrypoint);
+    }
+
     return this;
   }
 
   public getRoutes() {
     return this.routes;
+  }
+
+  public expandModules(module: ModuleExpander) {
+    this.modules.push(module);
+    this.expandRoutes(module.getRoutes());
+    this.expandEntryPoint(module.getEntrypoint());
+
+    return this;
+  }
+
+  public getModules() {
+    return this.modules;
   }
 
   public build() {
@@ -44,5 +61,3 @@ class Expander {
     });
   }
 }
-
-export default Expander;

@@ -3,7 +3,8 @@ import { render } from "react-dom";
 import App from "./containers/App/App";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import "antd/dist/antd.css";
-import Expander from "@monorep/expander/src/expander";
+import { Expander } from "@monorep/expander/src/Expander";
+import { ModuleExpander, IModuleExpander } from "@monorep/expander/src/ModuleExpander";
 
 const expanderInstance = Expander.getInstance();
 
@@ -36,4 +37,11 @@ const appRoutes = () => {
   ];
 };
 
-expanderInstance.expandRoutes(appRoutes()).expandEntryPoint(rootEntryPoint);
+class AppModule extends ModuleExpander implements IModuleExpander {}
+
+expanderInstance.expandModules(
+  new AppModule({
+    routes: appRoutes(),
+    entrypoint: rootEntryPoint
+  })
+);

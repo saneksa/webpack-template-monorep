@@ -1,5 +1,5 @@
 import { forEach, includes } from "lodash";
-import Expander from "./expander";
+import { Expander } from "./Expander";
 
 const getSubsystems = async () => {
   try {
