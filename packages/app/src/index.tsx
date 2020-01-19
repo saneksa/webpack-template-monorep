@@ -3,12 +3,12 @@ import { render } from "react-dom";
 import App from "./containers/App/App";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import "antd/dist/antd.css";
-import { Expander } from "@monorep/expander/src/Expander";
-import { ModuleExpander, IModuleExpander } from "@monorep/expander/src/ModuleExpander";
+import { ModuleExpander, IModuleExpander } from "../../expander/src/ModuleExpander";
+import { Expander } from "../../expander/src/Expander";
 
 const expanderInstance = Expander.getInstance();
 
-const rootEntryPoint = () => {
+export const rootEntryPoint = () => {
   render(
     <BrowserRouter>
       <Switch key="1">
@@ -20,7 +20,7 @@ const rootEntryPoint = () => {
   );
 };
 
-const appRoutes = () => {
+export const appRoutes = () => {
   return [
     <Route
       key="default"
@@ -37,9 +37,9 @@ const appRoutes = () => {
   ];
 };
 
-class AppModule extends ModuleExpander implements IModuleExpander {}
+export class AppModule extends ModuleExpander implements IModuleExpander {}
 
-expanderInstance.expandModules(
+Expander.getInstance().expandModules(
   new AppModule({
     routes: appRoutes(),
     entrypoint: rootEntryPoint

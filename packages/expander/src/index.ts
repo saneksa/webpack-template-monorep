@@ -1,6 +1,15 @@
 import { forEach, includes } from "lodash";
 import { Expander } from "./Expander";
 
+const appModule = () => import("../../app/src/index");
+const app2Module = () => import("../../app2/src/index");
+
+//@ts-ignore
+const Modules = new Map([
+  ["com.company.app", appModule],
+  ["com.company.app2", app2Module]
+]);
+
 const getSubsystems = async () => {
   try {
     const subsystemsList: { uuid: string }[] = await (
@@ -9,21 +18,14 @@ const getSubsystems = async () => {
 
     const promises: any[] = [];
     forEach(subsystemsList, subsystem => {
-      const subsystemName = includes(subsystem?.uuid, ".") && subsystem?.uuid?.split(".").slice(-1);
+      const module = Modules.get(subsystem.uuid)?.();
 
-      if (!subsystemName) {
+      if (!module) {
+        console.error(`Модуль ${subsystem.uuid} не найден!`);
         return;
       }
 
-      const module = import(`../../${subsystemName}/src/index`)
-        .then(status => {
-          if (status.__esModule) {
-            promises.push(module);
-          }
-        })
-        .catch(error => {
-          console.error(`ошибка при подключении `, error);
-        });
+      promises.push(module);
     });
 
     Promise.all(promises).then(() => {

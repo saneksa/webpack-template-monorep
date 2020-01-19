@@ -9,6 +9,7 @@ const devServer = require("./webpack/devServer");
 const overlay = require("./webpack/overlay");
 const bundleAnalyzer = require("./webpack/bundleAnalyzer");
 const duplicatePackage = require("./webpack/duplicatePackage");
+const babelLoader = require("./webpack/babel");
 const styles = require("./webpack/styles");
 const _ = require("lodash");
 
@@ -50,6 +51,7 @@ const common = mode => {
             test: /\.(js|jsx|ts|tsx)$/,
             exclude: /node_modules/,
             use: [
+              // babelLoader(),
               {
                 loader: "ts-loader",
                 options: {

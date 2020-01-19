@@ -6,12 +6,14 @@
     "strict": true,
     "target": "ES2015",
     "checkJs": false,
-    "module": "CommonJS",
+    "module": "AMD",
     "baseUrl": "./packages",
-    "rootDir": ".",
+    "rootDir": "./packages",
     "allowSyntheticDefaultImports": false,
+    "skipLibCheck": true,
     "locale": "ru",
     "types": ["@types/webpack-env"]
   },
-  "include": ["packages"]
+  "include": ["packages"],
+  "exclude": ["node_modules"]
 }
