@@ -37,8 +37,8 @@
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "clean-webpack-plugin": "^3.0.0",
     "@types/webpack-env": "^1.15.0",
-    "husky": "^4.0.10",
-    "lint-staged": "^9.5.0",
+    "husky": "^4.2.1",
+    "lint-staged": "^10.0.7",
     "@babel/core": "^7.8.3",
     "babel-loader": "^8.0.6"
   },
@@ -52,8 +52,7 @@
   },
   "lint-staged": {
     "*.(js|jsx|ts|tsx|json)": [
-      "yarn run prettier",
-      "git add"
+      "prettier --find-config-path --write"
     ]
   }
 }

@@ -6,6 +6,7 @@
   "private": true,
   "dependencies": {
     "@monorep/expander": "1.0.0",
+    "@monorep/app": "1.0.0",
     "antd": "^3.26.7",
     "lodash": "^4.17.15",
     "react": "^16.12.0",

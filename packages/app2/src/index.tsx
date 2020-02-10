@@ -1,7 +1,11 @@
 import * as React from "react";
 import { Route } from "react-router-dom";
-import { ModuleExpander, IModuleExpander } from "../../expander/src/ModuleExpander";
-import { Expander } from "../../expander/src/Expander";
+
+import App2 from "./App2";
+import { ServiceLocatorGeneric } from "@monorep/expander/src/ServiceLocatorGeneric";
+import { IIAppConfig } from "@monorep/app/src/containers/App/App";
+import { ModuleExpander, IModuleExpander } from "@monorep/expander/src/ModuleExpander";
+import { Expander } from "@monorep/expander/src/Expander";
 
 export const app2GetRoutes = () => {
   return [
@@ -9,6 +13,8 @@ export const app2GetRoutes = () => {
     <Route key="app22" path="/app22" component={() => <div>App22</div>} />
   ];
 };
+
+ServiceLocatorGeneric.register(IIAppConfig, App2);
 
 export class App2Module extends ModuleExpander implements IModuleExpander {}
 

@@ -6,13 +6,16 @@
     "strict": true,
     "target": "ES2015",
     "checkJs": false,
-    "module": "AMD",
+    "module": "ESNext",
     "baseUrl": "./packages",
     "rootDir": "./packages",
-    "allowSyntheticDefaultImports": false,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
     "skipLibCheck": true,
     "locale": "ru",
-    "types": ["@types/webpack-env"]
+    "downlevelIteration": true,
+    "esModuleInterop": true,
+    "types": ["@types/webpack-env", "reflect-metadata"]
   },
   "include": ["packages"],
   "exclude": ["node_modules"]

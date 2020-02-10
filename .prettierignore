@@ -1,3 +1,4 @@
 *.sass
 vs.code-workspace
 yarn.lock
+.gitignore/

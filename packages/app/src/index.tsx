@@ -3,8 +3,8 @@ import { render } from "react-dom";
 import App from "./containers/App/App";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import "antd/dist/antd.css";
-import { ModuleExpander, IModuleExpander } from "../../expander/src/ModuleExpander";
-import { Expander } from "../../expander/src/Expander";
+import { Expander } from "@monorep/expander/src/Expander";
+import { ModuleExpander, IModuleExpander } from "@monorep/expander/src/ModuleExpander";
 
 const expanderInstance = Expander.getInstance();
 
