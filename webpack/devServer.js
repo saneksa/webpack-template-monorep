@@ -1,4 +1,4 @@
-module.exports = function() {
+module.exports = function () {
   return {
     devServer: {
       stats: "minimal",
@@ -8,7 +8,7 @@ module.exports = function() {
       hot: false,
       port: 3000,
       historyApiFallback: true,
-      injectClient: false
-    }
+      injectClient: false,
+    },
   };
 };

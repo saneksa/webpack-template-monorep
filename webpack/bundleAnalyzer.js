@@ -1,6 +1,6 @@
 const WebpackBundleAnalyzer = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
-module.exports = analyzePort => ({
+module.exports = (analyzePort) => ({
   plugins: [
     new WebpackBundleAnalyzer({
       analyzerMode: "server",
@@ -8,7 +8,7 @@ module.exports = analyzePort => ({
       analyzerPort: analyzePort,
       defaultSizes: "parsed",
       openAnalyzer: false,
-      logLevel: "info"
-    })
-  ]
+      logLevel: "info",
+    }),
+  ],
 });

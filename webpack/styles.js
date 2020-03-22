@@ -1,6 +1,6 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-module.exports = isDev => {
+module.exports = (isDev) => {
   return {
     module: {
       rules: [
@@ -12,18 +12,18 @@ module.exports = isDev => {
               : {
                   loader: MiniCssExtractPlugin.loader,
                   options: {
-                    hmr: false
-                  }
+                    hmr: false,
+                  },
                 },
             "css-loader",
             {
               loader: "postcss-loader",
               options: {
-                plugins: () => [require("autoprefixer")]
-              }
+                plugins: () => [require("autoprefixer")],
+              },
             },
-            "sass-loader"
-          ]
+            "sass-loader",
+          ],
         },
         {
           test: /\.less$/,
@@ -33,20 +33,20 @@ module.exports = isDev => {
             {
               loader: "postcss-loader",
               options: {
-                plugins: () => [require("autoprefixer")]
-              }
+                plugins: () => [require("autoprefixer")],
+              },
             },
-            "less-loader"
-          ]
-        }
-      ]
+            "less-loader",
+          ],
+        },
+      ],
     },
     plugins: [
       new MiniCssExtractPlugin({
         filename: "/static/css/[name].css",
         chunkFilename: "/static/css/[id].css",
-        ignoreOrder: true
-      })
-    ]
+        ignoreOrder: true,
+      }),
+    ],
   };
 };

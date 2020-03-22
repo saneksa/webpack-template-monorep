@@ -51,8 +51,7 @@
   },
   "lint-staged": {
     "*.(js|jsx|ts|tsx|json)": [
-      "yarn run prettier",
-      "git add"
+      "yarn run prettier"
     ]
   }
 }
