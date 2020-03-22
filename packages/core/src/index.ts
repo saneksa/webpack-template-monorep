@@ -1,13 +1,16 @@
-import { forEach, includes } from "lodash";
+import { forEach } from "lodash";
 import { Expander } from "./Expander";
+import { ModuleExpander } from "./ModuleExpander";
+import type { IModuleExpander } from "./ModuleExpander";
+import { Injectable } from "./Injectable";
 
-const appModule = () => import("../../app/src/index");
-const app2Module = () => import("../../app2/src/index");
+const appModule = () => import("@monorep/app");
+const app2Module = () => import("@monorep/app2");
 
 //@ts-ignore
 const Modules = new Map([
   ["com.company.app", appModule],
-  ["com.company.app2", app2Module]
+  ["com.company.app2", app2Module],
 ]);
 
 const getSubsystems = async () => {
@@ -17,7 +20,7 @@ const getSubsystems = async () => {
     ).json();
 
     const promises: any[] = [];
-    forEach(subsystemsList, subsystem => {
+    forEach(subsystemsList, (subsystem) => {
       const module = Modules.get(subsystem.uuid)?.();
 
       if (!module) {
@@ -37,3 +40,7 @@ const getSubsystems = async () => {
 };
 
 getSubsystems();
+
+export { Expander, ModuleExpander, Injectable };
+
+export type { IModuleExpander };

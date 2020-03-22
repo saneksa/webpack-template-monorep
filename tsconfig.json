@@ -2,11 +2,12 @@
   "compilerOptions": {
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "moduleResolution": "node",
     "jsx": "react",
     "strict": true,
     "target": "ES2015",
     "checkJs": false,
-    "module": "AMD",
+    "module": "ESNext",
     "baseUrl": "./packages",
     "rootDir": "./packages",
     "allowSyntheticDefaultImports": false,
@@ -14,6 +15,5 @@
     "locale": "ru",
     "types": ["@types/webpack-env"]
   },
-  "include": ["packages"],
   "exclude": ["node_modules"]
 }

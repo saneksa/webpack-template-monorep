@@ -54,7 +54,7 @@ export class Expander {
   }
 
   public build() {
-    this.entrypointList.forEach(getEntrypoint => {
+    this.entrypointList.forEach((getEntrypoint) => {
       if (isFunction(getEntrypoint)) {
         getEntrypoint();
       }

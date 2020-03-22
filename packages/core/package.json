@@ -1,12 +1,14 @@
 {
-  "name": "@monorep/expander",
+  "name": "@monorep/core",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "@monorep/app": "^1.0.0",
+    "@monorep/app2": "^1.0.0",
     "lodash": "^4.17.15",
-    "typescript": "^3.7.5",
+    "typescript": "^3.8.3",
     "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {

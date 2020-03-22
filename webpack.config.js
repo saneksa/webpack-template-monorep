@@ -17,33 +17,33 @@ const PATHS = {
   packages: path.join(__dirname, "packages"),
   buildPath: path.join(__dirname, "build"),
   publicPath: path.join(__dirname, "public"),
-  analyzePort: 8888
+  analyzePort: 8888,
 };
 
-const common = mode => {
+const common = (mode) => {
   const isDev = mode === "development";
 
   return merge([
     {
       entry: {
-        index: `${PATHS.packages}/expander/src/index.ts`
+        index: `${PATHS.packages}/core/src/index.ts`,
       },
       output: {
         path: PATHS.buildPath,
         filename: isDev ? "./static/js/[name].js" : "static/js/[contenthash].js",
-        chunkFilename: isDev ? "./static/js/[name].[id].js" : "static/js/[contenthash].js"
+        chunkFilename: isDev ? "./static/js/[name].[id].js" : "static/js/[contenthash].js",
       },
       optimization: {
         splitChunks: {
           chunks: "all",
-          maxSize: 1024 * 244
+          maxSize: 1024 * 244,
         },
         runtimeChunk: {
-          name: entrypoint => `runtime-${entrypoint.name}`
-        }
+          name: (entrypoint) => `runtime-${entrypoint.name}`,
+        },
       },
       resolve: {
-        extensions: [".ts", ".tsx", ".js", ".jsx"]
+        extensions: [".ts", ".tsx", ".js", ".jsx"],
       },
       module: {
         rules: [
@@ -56,12 +56,12 @@ const common = mode => {
                 loader: "ts-loader",
                 options: {
                   // disable type checker - we will use it in fork plugin
-                  transpileOnly: true
-                }
-              }
-            ]
-          }
-        ]
+                  transpileOnly: true,
+                },
+              },
+            ],
+          },
+        ],
       },
       plugins: [
         new CleanWebpackPlugin(),
@@ -72,8 +72,8 @@ const common = mode => {
           minify: {
             minifyCSS: !isDev,
             minifyJS: !isDev,
-            removeComments: !isDev
-          }
+            removeComments: !isDev,
+          },
         }),
         new ForkTsCheckerWebpackPlugin({
           // eslint: true,
@@ -81,23 +81,23 @@ const common = mode => {
           useTypescriptIncrementalApi: true,
           checkSyntacticErrors: true,
           measureCompilationTime: true,
-          async: false
+          async: false,
         }),
         new webpack.DefinePlugin({
           "process.env": {
-            NODE_ENV: JSON.stringify(mode)
-          }
-        })
+            NODE_ENV: JSON.stringify(mode),
+          },
+        }),
       ],
       performance: {
-        hints: "warning"
-      }
+        hints: "warning",
+      },
     },
-    styles(isDev)
+    styles(isDev),
   ]);
 };
 
-module.exports = function(env, argv) {
+module.exports = function (env, argv) {
   if (argv.mode === "production") {
     return merge([common(argv.mode), minimizer]);
   }
@@ -108,7 +108,7 @@ module.exports = function(env, argv) {
       devServer(),
       overlay,
       bundleAnalyzer(PATHS.bundleAnalyzer),
-      duplicatePackage
+      duplicatePackage,
     ]);
   }
 };
