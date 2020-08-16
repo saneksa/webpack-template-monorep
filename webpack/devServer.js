@@ -1,7 +1,7 @@
 module.exports = function () {
   return {
     devServer: {
-      stats: "minimal",
+      stats: "errors-only",
       overlay: false,
       compress: true,
       liveReload: false,

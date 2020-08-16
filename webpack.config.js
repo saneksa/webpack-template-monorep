@@ -1,6 +1,7 @@
 const path = require("path");
+const os = require("os");
 const webpack = require("webpack");
-const merge = require("webpack-merge");
+const { merge } = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
@@ -51,12 +52,20 @@ const common = (mode) => {
             test: /\.(js|jsx|ts|tsx)$/,
             exclude: /node_modules/,
             use: [
-              // babelLoader(),
+              // babelLoader(isDev), //должен быть последним (1м в списке)
+              { loader: "cache-loader" },
+              {
+                loader: "thread-loader",
+                options: {
+                  // there should be 1 cpu for the fork-ts-checker-webpack-plugin
+                  workers: os.cpus().length - 1,
+                },
+              },
               {
                 loader: "ts-loader",
                 options: {
-                  // disable type checker - we will use it in fork plugin
                   transpileOnly: true,
+                  happyPackMode: true,
                 },
               },
             ],
@@ -76,12 +85,10 @@ const common = (mode) => {
           },
         }),
         new ForkTsCheckerWebpackPlugin({
-          // eslint: true,
-          tsconfig: path.resolve(__dirname, "tsconfig.json"),
-          useTypescriptIncrementalApi: true,
-          checkSyntacticErrors: true,
-          measureCompilationTime: true,
-          async: false,
+          async: true,
+          typescript: {
+            memoryLimit: 2048,
+          },
         }),
         new webpack.DefinePlugin({
           "process.env": {

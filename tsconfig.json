@@ -11,6 +11,7 @@
     "baseUrl": "./packages",
     "rootDir": "./packages",
     "allowSyntheticDefaultImports": false,
+    "importsNotUsedAsValues": "error",
     "skipLibCheck": true,
     "locale": "ru",
     "types": ["@types/webpack-env"]

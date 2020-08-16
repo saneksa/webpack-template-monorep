@@ -1,4 +1,4 @@
-import { TModuleExpanderParams, ModuleExpander } from "./ModuleExpander";
+import type { TModuleExpanderParams, ModuleExpander } from "./ModuleExpander";
 import { Expander } from "./Expander";
 
 export const Injectable = (params: TModuleExpanderParams) => <

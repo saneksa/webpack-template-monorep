@@ -5,13 +5,13 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@monorep/app": "^1.0.0",
-    "@monorep/app2": "^1.0.0",
-    "lodash": "^4.17.15",
-    "typescript": "^3.8.3",
-    "reflect-metadata": "^0.1.13"
+    "@monorep/app": "1.0.0",
+    "@monorep/app2": "1.0.0",
+    "lodash": "4.17.20",
+    "typescript": "3.9.7",
+    "reflect-metadata": "0.1.13"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.149"
+    "@types/lodash": "4.14.159"
   }
 }

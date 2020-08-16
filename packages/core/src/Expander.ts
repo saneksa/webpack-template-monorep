@@ -1,5 +1,5 @@
 import { isFunction, isArray } from "lodash";
-import { ModuleExpander } from "./ModuleExpander";
+import type { ModuleExpander } from "./ModuleExpander";
 
 export class Expander {
   private static instance: Expander;
