@@ -10,7 +10,7 @@
     "module": "ESNext",
     "baseUrl": "./packages",
     "rootDir": "./packages",
-    "allowSyntheticDefaultImports": false,
+    "allowSyntheticDefaultImports": true,
     "importsNotUsedAsValues": "error",
     "skipLibCheck": true,
     "locale": "ru",

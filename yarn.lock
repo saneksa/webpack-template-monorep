@@ -6445,6 +6445,23 @@ mkdirp@^0.5.5:
   dependencies:
     minimist "^1.2.5"
 
+mobx-react-lite@>=2.0.6:
+  version "2.0.7"
+  resolved "https://npm.office.infomaximum.com/mobx-react-lite/-/mobx-react-lite-2.0.7.tgz#1bfb3b4272668e288047cf0c7940b14e91cba284"
+  integrity sha512-YKAh2gThC6WooPnVZCoC+rV1bODAKFwkhxikzgH18wpBjkgTkkR9Sb0IesQAH5QrAEH/JQVmy47jcpQkf2Au3Q==
+
+mobx-react@6.2.5:
+  version "6.2.5"
+  resolved "https://npm.office.infomaximum.com/mobx-react/-/mobx-react-6.2.5.tgz#9020a17b79cc6dc3d124ad89ab36eb9ea540a45b"
+  integrity sha512-LxtXXW0GkOAO6VOIg2m/6WL6ZuKlzOWwESIFdrWelI0ZMIvtKCMZVUuulcO5GAWSDsH0ApaMkGLoaPqKjzyziQ==
+  dependencies:
+    mobx-react-lite ">=2.0.6"
+
+mobx@4.15.5:
+  version "4.15.5"
+  resolved "https://npm.office.infomaximum.com/mobx/-/mobx-4.15.5.tgz#7fb0fb5fbd56ccbd9551b1a7510494b6c5e41680"
+  integrity sha512-Tjhxy2ui0H++1ackzkeG+YSDDwS7sKBvIVCxyADK+S/8ZznctmrCL5vvu+jpE+kBLpttHj/xP+haLC5QEsqA2Q==
+
 modify-values@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/modify-values/-/modify-values-1.0.1.tgz#b3939fa605546474e3e3e3c63d64bd43b4ee6022"

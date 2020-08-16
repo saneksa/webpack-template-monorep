@@ -1,7 +1,9 @@
-import * as React from "react";
+import React from "react";
 import "./App.less";
-import "./App.css";
 import "./App.sass";
+const s = require("./App.css");
+
+console.warn(s);
 
 class App extends React.PureComponent {
   private getContent() {
@@ -10,7 +12,7 @@ class App extends React.PureComponent {
 
   public render() {
     return (
-      <div className="vvv">
+      <div className={s.vvv}>
         <div className="cds">{this.getContent()}</div>
       </div>
     );

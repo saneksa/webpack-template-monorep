@@ -59,6 +59,7 @@ const common = (mode) => {
                 options: {
                   // there should be 1 cpu for the fork-ts-checker-webpack-plugin
                   workers: os.cpus().length - 1,
+                  poolTimeout: Infinity,
                 },
               },
               {
@@ -87,6 +88,10 @@ const common = (mode) => {
         new ForkTsCheckerWebpackPlugin({
           async: true,
           typescript: {
+            diagnosticOptions: {
+              semantic: true,
+              syntactic: true,
+            },
             memoryLimit: 2048,
           },
         }),
@@ -100,18 +105,18 @@ const common = (mode) => {
         hints: "warning",
       },
     },
-    styles(isDev),
   ]);
 };
 
 module.exports = function (env, argv) {
   if (argv.mode === "production") {
-    return merge([common(argv.mode), minimizer]);
+    return merge([common(argv.mode), styles(false), minimizer]);
   }
 
   if (argv.mode === "development") {
     return merge([
       common(argv.mode),
+      styles(true),
       devServer(),
       overlay,
       bundleAnalyzer(PATHS.bundleAnalyzer),
