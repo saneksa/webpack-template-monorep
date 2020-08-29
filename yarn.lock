@@ -9,6 +9,13 @@
   dependencies:
     tinycolor2 "^1.4.1"
 
+"@ant-design/colors@^4.0.5":
+  version "4.0.5"
+  resolved "https://npm.office.infomaximum.com/@ant-design%2fcolors/-/colors-4.0.5.tgz#d7d100d7545cca8f624954604a6892fc48ba5aae"
+  integrity sha512-3mnuX2prnWOWvpFTS2WH2LoouWlOgtnIpc6IarWN6GOzzLF8dW/U8UctuvIPhoboETehZfJ61XP+CGakBEPJ3Q==
+  dependencies:
+    tinycolor2 "^1.4.1"
+
 "@ant-design/css-animation@^1.7.2":
   version "1.7.3"
   resolved "https://npm.office.infomaximum.com/@ant-design%2fcss-animation/-/css-animation-1.7.3.tgz#60a1c970014e86b28f940510d69e503e428f1136"
@@ -19,7 +26,7 @@
   resolved "https://registry.yarnpkg.com/@ant-design/icons-svg/-/icons-svg-4.0.0.tgz#6683db0df97c0c6900bb28a280faf391522ec734"
   integrity sha512-Nai+cd3XUrv/z50gSk1FI08j6rENZ1e93rhKeLTBGwa5WrmHvhn2vowa5+voZW2qkXJn1btS6tdvTEDB90M0Pw==
 
-"@ant-design/icons@^4.2.1":
+"@ant-design/icons@^4.2.1", "@ant-design/icons@^4.2.2":
   version "4.2.2"
   resolved "https://npm.office.infomaximum.com/@ant-design%2ficons/-/icons-4.2.2.tgz#6533c5a02aec49238ec4748074845ad7d85a4f5e"
   integrity sha512-DrVV+wcupnHS7PehJ6KiTcJtAR5c25UMgjGECCc6pUT9rsvw0AuYG+a4HDjfxEQuDqKTHwW+oX/nIvCymyLE8Q==
@@ -63,16 +70,16 @@
   dependencies:
     "@babel/highlight" "^7.10.4"
 
-"@babel/core@7.11.1":
-  version "7.11.1"
-  resolved "https://npm.office.infomaximum.com/@babel%2fcore/-/core-7.11.1.tgz#2c55b604e73a40dc21b0e52650b11c65cf276643"
-  integrity sha512-XqF7F6FWQdKGGWAzGELL+aCO1p+lRY5Tj5/tbT3St1G8NaH70jhhDIKknIZaDans0OQBG5wRAldROLHSt44BgQ==
+"@babel/core@7.11.4":
+  version "7.11.4"
+  resolved "https://npm.office.infomaximum.com/@babel%2fcore/-/core-7.11.4.tgz#4301dfdfafa01eeb97f1896c5501a3f0655d4229"
+  integrity sha512-5deljj5HlqRXN+5oJTY7Zs37iH3z3b++KjiKtIsJy1NrjOOVSEaJHEetLBhyu0aQOSNNZ/0IuEAan9GzRuDXHg==
   dependencies:
     "@babel/code-frame" "^7.10.4"
-    "@babel/generator" "^7.11.0"
+    "@babel/generator" "^7.11.4"
     "@babel/helper-module-transforms" "^7.11.0"
     "@babel/helpers" "^7.10.4"
-    "@babel/parser" "^7.11.1"
+    "@babel/parser" "^7.11.4"
     "@babel/template" "^7.10.4"
     "@babel/traverse" "^7.11.0"
     "@babel/types" "^7.11.0"
@@ -89,6 +96,15 @@
   version "7.11.0"
   resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.11.0.tgz#4b90c78d8c12825024568cbe83ee6c9af193585c"
   integrity sha512-fEm3Uzw7Mc9Xi//qU20cBKatTfs2aOtKqmvy/Vm7RkJEGFQ4xc9myCfbXxqK//ZS8MR/ciOHw6meGASJuKmDfQ==
+  dependencies:
+    "@babel/types" "^7.11.0"
+    jsesc "^2.5.1"
+    source-map "^0.5.0"
+
+"@babel/generator@^7.11.4":
+  version "7.11.4"
+  resolved "https://npm.office.infomaximum.com/@babel%2fgenerator/-/generator-7.11.4.tgz#1ec7eec00defba5d6f83e50e3ee72ae2fee482be"
+  integrity sha512-Rn26vueFx0eOoz7iifCN2UHT6rGtnkSGWSoDRIy8jZN3B91PzeSULbswfLoOWuTuAcNwpG/mxy+uCTDnZ9Mp1g==
   dependencies:
     "@babel/types" "^7.11.0"
     jsesc "^2.5.1"
@@ -210,10 +226,15 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@babel/parser@^7.10.4", "@babel/parser@^7.11.0", "@babel/parser@^7.11.1":
+"@babel/parser@^7.10.4", "@babel/parser@^7.11.0":
   version "7.11.3"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.11.3.tgz#9e1eae46738bcd08e23e867bab43e7b95299a8f9"
   integrity sha512-REo8xv7+sDxkKvoxEywIdsNFiZLybwdI7hcT5uEPyQrSMB4YQ973BfC9OOrD/81MaIjh6UxdulIQXkjmiH3PcA==
+
+"@babel/parser@^7.11.4":
+  version "7.11.4"
+  resolved "https://npm.office.infomaximum.com/@babel%2fparser/-/parser-7.11.4.tgz#6fa1a118b8b0d80d0267b719213dc947e88cc0ca"
+  integrity sha512-MggwidiH+E9j5Sh8pbrX5sJvMcsqS5o+7iB42M9/k0CD63MjYbdP4nhSh7uB5wnv2/RVzTZFTxzF/kIa5mrCqA==
 
 "@babel/runtime@^7.1.2", "@babel/runtime@^7.6.3":
   version "7.8.3"
@@ -222,7 +243,7 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@babel/runtime@^7.10.1", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.4", "@babel/runtime@^7.11.1", "@babel/runtime@^7.5.5":
+"@babel/runtime@^7.10.1", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.4", "@babel/runtime@^7.11.1", "@babel/runtime@^7.11.2", "@babel/runtime@^7.5.5":
   version "7.11.2"
   resolved "https://npm.office.infomaximum.com/@babel%2fruntime/-/runtime-7.11.2.tgz#f549c13c754cc40b87644b9fa9f09a6a95fe0736"
   integrity sha512-TeWkU52so0mPtDcaCTxNBI/IHiz0pZgr8VEFqXFtZWpYD08ZB6FaSwVAS8MKRQAP3bYKiVjwysOJgMFY28o6Tw==
@@ -1142,10 +1163,10 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.5.tgz#dcce4430e64b443ba8945f0290fb564ad5bac6dd"
   integrity sha512-7+2BITlgjgDhH0vvwZU/HZJVyk+2XUlvxXe8dFMedNX/aMkaOq++rMAFXc0tM7ij15QaWlbdQASBR9dihi+bDQ==
 
-"@types/lodash@4.14.159":
-  version "4.14.159"
-  resolved "https://npm.office.infomaximum.com/@types%2flodash/-/lodash-4.14.159.tgz#61089719dc6fdd9c5cb46efc827f2571d1517065"
-  integrity sha512-gF7A72f7WQN33DpqOWw9geApQPh4M3PxluMtaHxWHXEGSN12/WbcEk/eNSqWNQcQhF66VSZ06vCF94CrHwXJDg==
+"@types/lodash@4.14.161":
+  version "4.14.161"
+  resolved "https://npm.office.infomaximum.com/@types%2flodash/-/lodash-4.14.161.tgz#a21ca0777dabc6e4f44f3d07f37b765f54188b18"
+  integrity sha512-EP6O3Jkr7bXvZZSZYlsgt5DIjiGr0dXP1/jVEwVLTFgg0d+3lWVQkRavYVQszV7dYUwvg0B8R0MBDpcmXg7XIA==
 
 "@types/minimatch@*":
   version "3.0.3"
@@ -1204,10 +1225,10 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/react@16.9.46":
-  version "16.9.46"
-  resolved "https://npm.office.infomaximum.com/@types%2freact/-/react-16.9.46.tgz#f0326cd7adceda74148baa9bff6e918632f5069e"
-  integrity sha512-dbHzO3aAq1lB3jRQuNpuZ/mnu+CdD3H0WVaaBQA8LTT3S33xhVBUj232T8M3tAhSWJs/D/UqORYUlJNl/8VQZg==
+"@types/react@16.9.48":
+  version "16.9.48"
+  resolved "https://npm.office.infomaximum.com/@types%2freact/-/react-16.9.48.tgz#d3387329f070d1b1bc0ff4a54a54ceefd5a8485c"
+  integrity sha512-4ykBVswgYitPGMXFRxJCHkxJDU2rjfU3/zw67f8+dB7sNdVJXsrwqoYxz/stkAucymnEEbRPFmX7Ce5Mc/kJCw==
   dependencies:
     "@types/prop-types" "*"
     csstype "^3.0.2"
@@ -1630,11 +1651,12 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0:
     "@types/color-name" "^1.1.1"
     color-convert "^2.0.1"
 
-antd@4.5.4:
-  version "4.5.4"
-  resolved "https://npm.office.infomaximum.com/antd/-/antd-4.5.4.tgz#1eaebcba7a0d9a2e69ad3365366026546fbf7b0f"
-  integrity sha512-ToBwPaEfRXpDwkFZwEeQc8TynqVLMRX/P4V2IA2cfS4H+w4HXi89kQik4/Gx48UphHmt6fcfwtfm8QZIn3nerA==
+antd@4.6.1:
+  version "4.6.1"
+  resolved "https://npm.office.infomaximum.com/antd/-/antd-4.6.1.tgz#d204215d3d00a3ac51a2e93ec2ee1a49adbdb705"
+  integrity sha512-RsqbFvUNSZ5K114492BNo4p+4MpCUpzIsZLu0XFlufYLyIE3pyw184OZjPnJ7b4qlMEvlIoE14N8qCb4BnZF0w==
   dependencies:
+    "@ant-design/colors" "^4.0.5"
     "@ant-design/css-animation" "^1.7.2"
     "@ant-design/icons" "^4.2.1"
     "@ant-design/react-slick" "~0.27.0"
@@ -1642,7 +1664,7 @@ antd@4.5.4:
     array-tree-filter "^2.1.0"
     classnames "^2.2.6"
     copy-to-clipboard "^3.2.0"
-    lodash "^4.17.13"
+    lodash "^4.17.20"
     moment "^2.25.3"
     omit.js "^2.0.2"
     raf "^3.4.1"
@@ -1653,23 +1675,24 @@ antd@4.5.4:
     rc-dialog "~8.1.0"
     rc-drawer "~4.1.0"
     rc-dropdown "~3.1.2"
-    rc-field-form "~1.8.0"
+    rc-field-form "~1.10.0"
+    rc-image "~3.0.2"
     rc-input-number "~6.0.0"
     rc-mentions "~1.4.0"
     rc-menu "~8.5.2"
     rc-motion "^1.0.0"
     rc-notification "~4.4.0"
-    rc-pagination "~2.4.5"
-    rc-picker "~1.15.1"
+    rc-pagination "~3.0.3"
+    rc-picker "~2.0.6"
     rc-progress "~3.0.0"
     rc-rate "~2.8.2"
     rc-resize-observer "^0.2.3"
-    rc-select "~11.0.12"
+    rc-select "~11.1.0"
     rc-slider "~9.3.0"
     rc-steps "~4.1.0"
     rc-switch "~3.2.0"
-    rc-table "~7.8.0"
-    rc-tabs "~11.5.0"
+    rc-table "~7.9.2"
+    rc-tabs "~11.6.0"
     rc-textarea "~0.3.0"
     rc-tooltip "~4.2.0"
     rc-tree "~3.9.0"
@@ -2542,7 +2565,7 @@ cli-cursor@^3.1.0:
   dependencies:
     restore-cursor "^3.1.0"
 
-cli-truncate@2.1.0, cli-truncate@^2.1.0:
+cli-truncate@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/cli-truncate/-/cli-truncate-2.1.0.tgz#c39e28bf05edcde5be3b98992a22deed5a2b93c7"
   integrity sha512-n8fOixwDD6b/ObinzTrp1ZKFzbgvKZvuz/TvejnLn1aQfC6r52XEx85FmuC+3HI+JM7coBRXUvNqEU2PHVrHpg==
@@ -2577,11 +2600,6 @@ clone@^1.0.2:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
   integrity sha1-2jCcwmPfFZlMaIypAheco8fNfH4=
-
-clone@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
-  integrity sha1-G39Ln1kfHo+DZwQBYANFoCiHQ18=
 
 coa@^2.0.2:
   version "2.0.2"
@@ -2675,10 +2693,10 @@ commander@^4.1.1:
   resolved "https://registry.yarnpkg.com/commander/-/commander-4.1.1.tgz#9fd602bd936294e9e9ef46a3f4d6964044b18068"
   integrity sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==
 
-commander@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-5.1.0.tgz#46abbd1652f8e059bddaef99bbdcb2ad9cf179ae"
-  integrity sha512-P0CysNDQ7rtVw4QIQtm+MRxV66vKFSvlsQvGYXZWR3qFU0jlMKHZZZgw8e+8DSah4UDKMqnknRDQz+xuQXQ/Zg==
+commander@^6.0.0:
+  version "6.1.0"
+  resolved "https://npm.office.infomaximum.com/commander/-/commander-6.1.0.tgz#f8d722b78103141006b66f4c7ba1e97315ba75bc"
+  integrity sha512-wl7PNrYWd2y5mp1OK/LhTlv8Ff4kQJQRXXAvF+uU/TPNiVJUxZLRYGj/B0y/lPGAVcSbJqH2Za/cvHmrPMC8mA==
 
 commondir@^1.0.1:
   version "1.0.1"
@@ -2965,6 +2983,17 @@ cosmiconfig@^6.0.0:
     path-type "^4.0.0"
     yaml "^1.7.2"
 
+cosmiconfig@^7.0.0:
+  version "7.0.0"
+  resolved "https://npm.office.infomaximum.com/cosmiconfig/-/cosmiconfig-7.0.0.tgz#ef9b44d773959cae63ddecd122de23853b60f8d3"
+  integrity sha512-pondGvTuVYDk++upghXJabWzL6Kxu6f26ljFw64Swq9v6sQPUL3EUlVDV56diOjpCayKihL6hVe8exIACU4XcA==
+  dependencies:
+    "@types/parse-json" "^4.0.0"
+    import-fresh "^3.2.1"
+    parse-json "^5.0.0"
+    path-type "^4.0.0"
+    yaml "^1.10.0"
+
 create-ecdh@^4.0.0:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/create-ecdh/-/create-ecdh-4.0.3.tgz#c9111b6f33045c4697f144787f9254cdc77c45ff"
@@ -3062,16 +3091,15 @@ css-declaration-sorter@^4.0.1:
     postcss "^7.0.1"
     timsort "^0.3.0"
 
-css-loader@4.2.1:
-  version "4.2.1"
-  resolved "https://npm.office.infomaximum.com/css-loader/-/css-loader-4.2.1.tgz#9f48fd7eae1219d629a3f085ba9a9102ca1141a7"
-  integrity sha512-MoqmF1if7Z0pZIEXA4ZF9PgtCXxWbfzfJM+3p+OYfhcrwcqhaCRb74DSnfzRl7e024xEiCRn5hCvfUbTf2sgFA==
+css-loader@4.2.2:
+  version "4.2.2"
+  resolved "https://npm.office.infomaximum.com/css-loader/-/css-loader-4.2.2.tgz#b668b3488d566dc22ebcf9425c5f254a05808c89"
+  integrity sha512-omVGsTkZPVwVRpckeUnLshPp12KsmMSLqYxs12+RzM9jRR5Y+Idn/tBffjXRvOE+qW7if24cuceFJqYR5FmGBg==
   dependencies:
     camelcase "^6.0.0"
     cssesc "^3.0.0"
     icss-utils "^4.1.1"
     loader-utils "^2.0.0"
-    normalize-path "^3.0.0"
     postcss "^7.0.32"
     postcss-modules-extract-imports "^2.0.0"
     postcss-modules-local-by-default "^3.0.3"
@@ -3706,9 +3734,9 @@ enhanced-resolve@^4.1.1, enhanced-resolve@^4.3.0:
     memory-fs "^0.5.0"
     tapable "^1.0.0"
 
-enquirer@^2.3.5:
+enquirer@^2.3.6:
   version "2.3.6"
-  resolved "https://registry.yarnpkg.com/enquirer/-/enquirer-2.3.6.tgz#2a7fe5dd634a1e4125a975ec994ff5456dc3734d"
+  resolved "https://npm.office.infomaximum.com/enquirer/-/enquirer-2.3.6.tgz#2a7fe5dd634a1e4125a975ec994ff5456dc3734d"
   integrity sha512-yjNnPr315/FjS4zIsUxYguYUPP2e1NK4d7E7ZOLiyYCcbFBiTMyID+2wvm2w6+pZ/odMA7cRkjhsPbltwBOrLg==
   dependencies:
     ansi-colors "^4.1.1"
@@ -3893,9 +3921,9 @@ execa@^1.0.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-execa@^4.0.1:
+execa@^4.0.3:
   version "4.0.3"
-  resolved "https://registry.yarnpkg.com/execa/-/execa-4.0.3.tgz#0a34dabbad6d66100bd6f2c576c8669403f317f2"
+  resolved "https://npm.office.infomaximum.com/execa/-/execa-4.0.3.tgz#0a34dabbad6d66100bd6f2c576c8669403f317f2"
   integrity sha512-WFDXGHckXPWZX19t1kCsXzOpqX9LWYNqn4C+HqZlk/V0imTkzJZqf87ZBhvpHaftERYknpk0fjSylnXVlVgI0A==
   dependencies:
     cross-spawn "^7.0.0"
@@ -4226,10 +4254,10 @@ fork-ts-checker-webpack-plugin@1.5.0:
     tapable "^1.0.0"
     worker-rpc "^0.1.0"
 
-fork-ts-checker-webpack-plugin@5.0.14:
-  version "5.0.14"
-  resolved "https://npm.office.infomaximum.com/fork-ts-checker-webpack-plugin/-/fork-ts-checker-webpack-plugin-5.0.14.tgz#83758b733ccd5d6e5780a72a5d5f099c353c108d"
-  integrity sha512-iwRdjgZx1Ll0DAMhmtOF4ffoICpiUxOqOHLrbIHmeCtZiwCrL/qscm+EXOJyzj3a9X8hLRLDEHy9FOyD6Gm42g==
+fork-ts-checker-webpack-plugin@5.1.0:
+  version "5.1.0"
+  resolved "https://npm.office.infomaximum.com/fork-ts-checker-webpack-plugin/-/fork-ts-checker-webpack-plugin-5.1.0.tgz#586fbee24aeea950c53bab529e32017f543e71cf"
+  integrity sha512-vuKyEjSLGbhQbEr5bifXXOkr9iV73L6n72mHoHIv7okvrf7O7z6RKeplM6C6ATPsukoQivij+Ba1vcptL60Z2g==
   dependencies:
     "@babel/code-frame" "^7.8.3"
     "@types/json-schema" "^7.0.5"
@@ -5065,7 +5093,7 @@ import-fresh@^2.0.0:
     caller-path "^2.0.0"
     resolve-from "^3.0.0"
 
-import-fresh@^3.1.0:
+import-fresh@^3.1.0, import-fresh@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/import-fresh/-/import-fresh-3.2.1.tgz#633ff618506e793af5ac91bf48b72677e15cbe66"
   integrity sha512-6e1q1cnWP2RXD9/keSkxHScg508CdXqXWgWBaETNhyuBFz+kUZlKboh+ISK+bU++DmbHimVBrOz/zzPe0sZ3sQ==
@@ -5738,10 +5766,10 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
   integrity sha512-s5kLOcnH0XqDO+FvuaLX8DDjZ18CGFk7VygH40QoKPUQhW4e2rvM0rwUq0t8IQDOwYSeLK01U90OjzBTme2QqA==
 
-klona@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/klona/-/klona-1.1.2.tgz#a79e292518a5a5412ec8d097964bff1571a64db0"
-  integrity sha512-xf88rTeHiXk+XE2Vhi6yj8Wm3gMZrygGdKjJqN8HkV+PwF/t50/LdAKHoHpPcxFAlmQszTZ1CugrK25S7qDRLA==
+klona@^2.0.3:
+  version "2.0.3"
+  resolved "https://npm.office.infomaximum.com/klona/-/klona-2.0.3.tgz#98274552c513583ad7a01456a789a2a0b4a2a538"
+  integrity sha512-CgPOT3ZadDpXxKcfV56lEQ9OQSZ42Mk26gnozI+uN/k39vzD8toUhRQoqsX0m9Q3eMPEfsLWmtyUpK/yqST4yg==
 
 last-call-webpack-plugin@^3.0.0:
   version "3.0.0"
@@ -5775,17 +5803,16 @@ lerna@3.22.1:
     import-local "^2.0.0"
     npmlog "^4.1.2"
 
-less-loader@6.2.0:
-  version "6.2.0"
-  resolved "https://npm.office.infomaximum.com/less-loader/-/less-loader-6.2.0.tgz#8b26f621c155b342eefc24f5bd6e9dc40c42a719"
-  integrity sha512-Cl5h95/Pz/PWub/tCBgT1oNMFeH1WTD33piG80jn5jr12T4XbxZcjThwNXDQ7AG649WEynuIzO4b0+2Tn9Qolg==
+less-loader@7.0.0:
+  version "7.0.0"
+  resolved "https://npm.office.infomaximum.com/less-loader/-/less-loader-7.0.0.tgz#d2a66f4fbbb4911e587f691579ee0ae79e21cfe5"
+  integrity sha512-fAgAaZHQJdX/woSMyNhvJt6bQUhpOtKODfuhk5AqgVPo6FVD3PezwHIZEtNPr4aumYoNQ1KBLnhynGX2XE/Lrg==
   dependencies:
-    clone "^2.1.2"
-    less "^3.11.3"
+    klona "^2.0.3"
     loader-utils "^2.0.0"
     schema-utils "^2.7.0"
 
-less@3.12.2, less@^3.11.3:
+less@3.12.2:
   version "3.12.2"
   resolved "https://npm.office.infomaximum.com/less/-/less-3.12.2.tgz#157e6dd32a68869df8859314ad38e70211af3ab4"
   integrity sha512-+1V2PCMFkL+OIj2/HrtrvZw0BC0sYLMICJfbQjuj/K8CEnlrFX6R5cKKgzzttsZDHyxQNL1jqMREjKN3ja/E3Q==
@@ -5805,20 +5832,20 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-lint-staged@10.2.11:
-  version "10.2.11"
-  resolved "https://npm.office.infomaximum.com/lint-staged/-/lint-staged-10.2.11.tgz#713c80877f2dc8b609b05bc59020234e766c9720"
-  integrity sha512-LRRrSogzbixYaZItE2APaS4l2eJMjjf5MbclRZpLJtcQJShcvUzKXsNeZgsLIZ0H0+fg2tL4B59fU9wHIHtFIA==
+lint-staged@10.2.13:
+  version "10.2.13"
+  resolved "https://npm.office.infomaximum.com/lint-staged/-/lint-staged-10.2.13.tgz#b9c504683470edfc464b7d3fe3845a5a1efcd814"
+  integrity sha512-conwlukNV6aL9SiMWjFtDp5exeDnTMekdNPDZsKGnpfQuHcO0E3L3Bbf58lcR+M7vk6LpCilxDAVks/DDVBYlA==
   dependencies:
-    chalk "^4.0.0"
-    cli-truncate "2.1.0"
-    commander "^5.1.0"
-    cosmiconfig "^6.0.0"
+    chalk "^4.1.0"
+    cli-truncate "^2.1.0"
+    commander "^6.0.0"
+    cosmiconfig "^7.0.0"
     debug "^4.1.1"
     dedent "^0.7.0"
-    enquirer "^2.3.5"
-    execa "^4.0.1"
-    listr2 "^2.1.0"
+    enquirer "^2.3.6"
+    execa "^4.0.3"
+    listr2 "^2.6.0"
     log-symbols "^4.0.0"
     micromatch "^4.0.2"
     normalize-path "^3.0.0"
@@ -5826,10 +5853,10 @@ lint-staged@10.2.11:
     string-argv "0.3.1"
     stringify-object "^3.3.0"
 
-listr2@^2.1.0:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/listr2/-/listr2-2.5.1.tgz#f265dddf916c8a9b475437b34ae85a7d8f495c7a"
-  integrity sha512-qkNRW70SwfwWLD/eiaTf2tfgWT/ZvjmMsnEFJOCzac0cjcc8rYHDBr1eQhRxopj6lZO7Oa5sS/pZzS6q+BsX+w==
+listr2@^2.6.0:
+  version "2.6.2"
+  resolved "https://npm.office.infomaximum.com/listr2/-/listr2-2.6.2.tgz#4912eb01e1e2dd72ec37f3895a56bf2622d6f36a"
+  integrity sha512-6x6pKEMs8DSIpA/tixiYY2m/GcbgMplMVmhQAaLFxEtNSKLeWTGjtmU57xvv6QCm2XcqzyNXL/cTSVf4IChCRA==
   dependencies:
     chalk "^4.1.0"
     cli-truncate "^2.1.0"
@@ -5982,12 +6009,12 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@4.17.20, lodash@^4.17.19:
+lodash@4.17.20, lodash@^4.17.19, lodash@^4.17.20:
   version "4.17.20"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
   integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
 
-lodash@^4.0.0, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.1, lodash@~4.17.10:
+lodash@^4.0.0, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.1, lodash@~4.17.10:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
@@ -6305,10 +6332,10 @@ mini-create-react-context@^0.4.0:
     "@babel/runtime" "^7.5.5"
     tiny-warning "^1.0.3"
 
-mini-css-extract-plugin@0.10.0:
-  version "0.10.0"
-  resolved "https://npm.office.infomaximum.com/mini-css-extract-plugin/-/mini-css-extract-plugin-0.10.0.tgz#a0e6bfcad22a9c73f6c882a3c7557a98e2d3d27d"
-  integrity sha512-QgKgJBjaJhxVPwrLNqqwNS0AGkuQQ31Hp4xGXEK/P7wehEg6qmNtReHKai3zRXqY60wGVWLYcOMJK2b98aGc3A==
+mini-css-extract-plugin@0.11.0:
+  version "0.11.0"
+  resolved "https://npm.office.infomaximum.com/mini-css-extract-plugin/-/mini-css-extract-plugin-0.11.0.tgz#3918953075109d4ca204bf1e8a393a78d3cc821f"
+  integrity sha512-dVWGuWJlQw2lZxsxBI3hOsoxg1k3DruLR0foHQLSkQMfk+qLJbv9dUk8fjmjWQKN9ef2n54ehA2FjClAsQhrWQ==
   dependencies:
     loader-utils "^1.1.0"
     normalize-url "1.9.1"
@@ -6445,22 +6472,22 @@ mkdirp@^0.5.5:
   dependencies:
     minimist "^1.2.5"
 
-mobx-react-lite@>=2.0.6:
-  version "2.0.7"
-  resolved "https://npm.office.infomaximum.com/mobx-react-lite/-/mobx-react-lite-2.0.7.tgz#1bfb3b4272668e288047cf0c7940b14e91cba284"
-  integrity sha512-YKAh2gThC6WooPnVZCoC+rV1bODAKFwkhxikzgH18wpBjkgTkkR9Sb0IesQAH5QrAEH/JQVmy47jcpQkf2Au3Q==
+mobx-react-lite@>=2.2.0:
+  version "2.2.0"
+  resolved "https://npm.office.infomaximum.com/mobx-react-lite/-/mobx-react-lite-2.2.0.tgz#95eecde237367af1087cc5c51d962ae081b6d1de"
+  integrity sha512-FUPacb4bk21qp/wrEv2vPcqC314nGRgHQzzIPHVBGAT5GtzaYiwvMHx192/Vy8TyI4+8H5JY9689jnvDOvLRuQ==
 
-mobx-react@6.2.5:
-  version "6.2.5"
-  resolved "https://npm.office.infomaximum.com/mobx-react/-/mobx-react-6.2.5.tgz#9020a17b79cc6dc3d124ad89ab36eb9ea540a45b"
-  integrity sha512-LxtXXW0GkOAO6VOIg2m/6WL6ZuKlzOWwESIFdrWelI0ZMIvtKCMZVUuulcO5GAWSDsH0ApaMkGLoaPqKjzyziQ==
+mobx-react@6.3.0:
+  version "6.3.0"
+  resolved "https://npm.office.infomaximum.com/mobx-react/-/mobx-react-6.3.0.tgz#7d11799f988bbdadc49e725081993b18baa20329"
+  integrity sha512-C14yya2nqEBRSEiJjPkhoWJLlV8pcCX3m2JRV7w1KivwANJqipoiPx9UMH4pm6QNMbqDdvJqoyl+LqNu9AhvEQ==
   dependencies:
-    mobx-react-lite ">=2.0.6"
+    mobx-react-lite ">=2.2.0"
 
-mobx@4.15.5:
-  version "4.15.5"
-  resolved "https://npm.office.infomaximum.com/mobx/-/mobx-4.15.5.tgz#7fb0fb5fbd56ccbd9551b1a7510494b6c5e41680"
-  integrity sha512-Tjhxy2ui0H++1ackzkeG+YSDDwS7sKBvIVCxyADK+S/8ZznctmrCL5vvu+jpE+kBLpttHj/xP+haLC5QEsqA2Q==
+mobx@4.15.6:
+  version "4.15.6"
+  resolved "https://npm.office.infomaximum.com/mobx/-/mobx-4.15.6.tgz#c3de77ab272f7074720914070370335fb68cfcda"
+  integrity sha512-eZVEHZLi/Fe+V4qurBBQoFHCqaGrfMuYK1Vy4t5MHYfy90f52ptAKsemHsJcYl+R5/sA3oeT3rMLiVsbB7bllA==
 
 modify-values@^1.0.0:
   version "1.0.1"
@@ -7830,10 +7857,10 @@ prepend-http@^1.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
   integrity sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
 
-prettier@2.0.5:
-  version "2.0.5"
-  resolved "https://npm.office.infomaximum.com/prettier/-/prettier-2.0.5.tgz#d6d56282455243f2f92cc1716692c08aa31522d4"
-  integrity sha512-7PtVymN48hGcO4fGjybyBSIWDsLU4H4XlvOHfq91pz9kkGlonzwTfYkaIEwiRg/dAJF9YlbsduBAgtYLi+8cFg==
+prettier@2.1.1:
+  version "2.1.1"
+  resolved "https://npm.office.infomaximum.com/prettier/-/prettier-2.1.1.tgz#d9485dd5e499daa6cb547023b87a6cf51bee37d6"
+  integrity sha512-9bY+5ZWCfqj3ghYBLxApy2zf6m+NJo5GzmLTpr9FsApsfjriNnS2dahWReHMi7qNPhhHl9SYHJs2cHZLgexNIw==
 
 pretty-error@^2.1.1:
   version "2.1.1"
@@ -8127,6 +8154,15 @@ rc-collapse@~2.0.0:
     react-is "^16.7.0"
     shallowequal "^1.1.0"
 
+rc-dialog@^8.1.0:
+  version "8.2.0"
+  resolved "https://npm.office.infomaximum.com/rc-dialog/-/rc-dialog-8.2.0.tgz#75a2b680917387db853232a538c97bf9fdcd0834"
+  integrity sha512-+hk9QYkwGq0aEdfkmJJkCKFP7ybNYAUqvhY6il2SIaplZfPDquFRMpqCEgUFWKlONRhfVPSO0W+Icyyuo+57pQ==
+  dependencies:
+    "@babel/runtime" "^7.10.1"
+    rc-animate "3.x"
+    rc-util "^5.0.1"
+
 rc-dialog@~8.1.0:
   version "8.1.0"
   resolved "https://npm.office.infomaximum.com/rc-dialog/-/rc-dialog-8.1.0.tgz#393910963bb05ac19d6d136620bd09622f1d677a"
@@ -8153,14 +8189,25 @@ rc-dropdown@^3.1.0, rc-dropdown@~3.1.2:
     classnames "^2.2.6"
     rc-trigger "^4.0.0"
 
-rc-field-form@~1.8.0:
-  version "1.8.1"
-  resolved "https://npm.office.infomaximum.com/rc-field-form/-/rc-field-form-1.8.1.tgz#ddb5b34cce498b11a3ad9dbfe2eb8e18539cb7e9"
-  integrity sha512-OAMFhS+92+4o7Y0WyTfQ6E5EdBk7z7vEXf4dL5CpoZU2OEHv/INZP1xts2AIKNVOBligG/WcfMTuk+GvbyVsnA==
+rc-field-form@~1.10.0:
+  version "1.10.1"
+  resolved "https://npm.office.infomaximum.com/rc-field-form/-/rc-field-form-1.10.1.tgz#f6eb76b5f24b58938ebadfc03cdd814c24de7db3"
+  integrity sha512-aosTtNTqLYX2jsG5GyCv7axe+b57XH73T7TmmrX/cmhemhtFjvNE6RkRkmtP9VOJnZg5YGC5HfK172cnJ1Ij7Q==
   dependencies:
     "@babel/runtime" "^7.8.4"
     async-validator "^3.0.3"
     rc-util "^5.0.0"
+
+rc-image@~3.0.2:
+  version "3.0.3"
+  resolved "https://npm.office.infomaximum.com/rc-image/-/rc-image-3.0.3.tgz#c7acc385924028d65e1d501eedebedba916285df"
+  integrity sha512-swJ9F+G7WlzdnUEkz/xGe2Xr00RNA1nq7VE7/5aOfQxYq06sB4jZMdJ19eUamcBO6sVXfhXe5AOlJTgfGeJ6Ag==
+  dependencies:
+    "@ant-design/icons" "^4.2.2"
+    "@babel/runtime" "^7.11.2"
+    classnames "^2.2.6"
+    rc-dialog "^8.1.0"
+    rc-util "^5.0.6"
 
 rc-input-number@~6.0.0:
   version "6.0.0"
@@ -8232,18 +8279,18 @@ rc-notification@~4.4.0:
     rc-animate "3.x"
     rc-util "^5.0.1"
 
-rc-pagination@~2.4.5:
-  version "2.4.6"
-  resolved "https://npm.office.infomaximum.com/rc-pagination/-/rc-pagination-2.4.6.tgz#cc030c9693c730b43592bdb6974fb32c1502a500"
-  integrity sha512-1ykd3Jti+JuOFdzEFXGfVpkuH+hKxLYz3FKV6BSwnnWXLr9Y8bbm7YiTSwBmdDcOg6tinH8b4IYaKzxBWRC6EA==
+rc-pagination@~3.0.3:
+  version "3.0.3"
+  resolved "https://npm.office.infomaximum.com/rc-pagination/-/rc-pagination-3.0.3.tgz#48ce55822e153ed9f9b8961fcb3bb8ecab8df37c"
+  integrity sha512-xm6LsiSOAWlxferiL5e0jcun1B9vbvYzcIkqpYZR7YvC5ZrcU9KKihb+DZe3DY+oUc49xhX2qGS4D66ITHqekQ==
   dependencies:
     "@babel/runtime" "^7.10.1"
     classnames "^2.2.1"
 
-rc-picker@~1.15.1:
-  version "1.15.3"
-  resolved "https://npm.office.infomaximum.com/rc-picker/-/rc-picker-1.15.3.tgz#e4379e6fed9a29f0c1705115d11d196625096b83"
-  integrity sha512-+VfzcsZui6oOOA0W44qQ7TRC28FUCLrZLjowwyouJKMjvU4HtKdDlSMTJHZNvBbfQoAfED4+mzUG2xtcdW7M+g==
+rc-picker@~2.0.6:
+  version "2.0.9"
+  resolved "https://npm.office.infomaximum.com/rc-picker/-/rc-picker-2.0.9.tgz#1c9d59a4724747aba6626e4aad8fb79f0080993a"
+  integrity sha512-fLVYQYUv+gV9Nr5TXsf//3if7mKaGT/h3roONNSrw3KN86To/ppbfFgvJfzkfdO7zyfY8TpOVhdgYPATehEolg==
   dependencies:
     "@babel/runtime" "^7.10.1"
     classnames "^2.2.1"
@@ -8252,7 +8299,6 @@ rc-picker@~1.15.1:
     moment "^2.24.0"
     rc-trigger "^4.0.0"
     rc-util "^5.0.1"
-    react "^16.0.0"
     shallowequal "^1.1.0"
 
 rc-progress@~3.0.0:
@@ -8294,17 +8340,17 @@ rc-select@^11.1.1:
     rc-virtual-list "^2.1.5"
     warning "^4.0.3"
 
-rc-select@~11.0.12:
-  version "11.0.13"
-  resolved "https://npm.office.infomaximum.com/rc-select/-/rc-select-11.0.13.tgz#fe5718af819d3e0bc12a55334bc1717257ef2dac"
-  integrity sha512-4/GDmBkGnDhYre3Dvq5UkIRXQJW8hbGdpdH8SjquSbCktAVitYV+opd/lKI28qMcBxCgjOHgYXwZ18TF+kP2VQ==
+rc-select@~11.1.0:
+  version "11.1.6"
+  resolved "https://npm.office.infomaximum.com/rc-select/-/rc-select-11.1.6.tgz#39bb7c685dc61f65d5d73554df58979587c45b16"
+  integrity sha512-X5kCwUGIe3uF5las4bFiXzD3F/hxs5Nz+wpf3xG6esg352ThP5kBROmMOeb91Yo2nOPZyiH6jnLsZLecnyWbZQ==
   dependencies:
     "@babel/runtime" "^7.10.1"
     classnames "2.x"
     rc-motion "^1.0.1"
     rc-trigger "^4.3.0"
     rc-util "^5.0.1"
-    rc-virtual-list "^1.1.2"
+    rc-virtual-list "^3.0.3"
     warning "^4.0.3"
 
 rc-slider@~9.3.0:
@@ -8336,22 +8382,22 @@ rc-switch@~3.2.0:
     classnames "^2.2.1"
     rc-util "^5.0.1"
 
-rc-table@~7.8.0:
-  version "7.8.6"
-  resolved "https://npm.office.infomaximum.com/rc-table/-/rc-table-7.8.6.tgz#897fb1671c62eb3a46033b53f0690fa0fd65dc61"
-  integrity sha512-rHRStVTO6FYlxs5Bk9S56Vo/Jn7pX3hOtHTHP+Vu++i9SF7DroOReMIi+OJ7RA9n3jVBxyT/9+NESXgTFvPbYA==
+rc-table@~7.9.2:
+  version "7.9.6"
+  resolved "https://npm.office.infomaximum.com/rc-table/-/rc-table-7.9.6.tgz#e15dff9d04d933da25e3e7ac60f0e2070dea0fff"
+  integrity sha512-NYLGgXquZtYMaZ44GyDR2zaMCQ4ujf2YLVOtz1Fj9Xc/dg9In1kTkVNtZC2UpuXboPWbh6pP9ycD5d55Zp1jDA==
   dependencies:
     "@babel/runtime" "^7.10.1"
     classnames "^2.2.5"
     raf "^3.4.1"
     rc-resize-observer "^0.2.0"
-    rc-util "^5.0.0"
+    rc-util "^5.0.4"
     shallowequal "^1.1.0"
 
-rc-tabs@~11.5.0:
-  version "11.5.6"
-  resolved "https://npm.office.infomaximum.com/rc-tabs/-/rc-tabs-11.5.6.tgz#bcff03f8c8dcc08b57ca97c0debe5d9fa3373957"
-  integrity sha512-Q2wqnt66SFksGXxNARLqGNMYIFH3KSm48+hMc4tq6qhgpsW104dedHcM86NUyqsQcvYWWiceUNu3TSnbe+XZnw==
+rc-tabs@~11.6.0:
+  version "11.6.1"
+  resolved "https://npm.office.infomaximum.com/rc-tabs/-/rc-tabs-11.6.1.tgz#a31a277b12f807cc7bdc31476c0d21124ce93e14"
+  integrity sha512-fJZUOmwBo2E4WTbucCSZO/N1ZK+d9K/QchgDeycTIqxl5D/xtX0Dw/vC2DFi140OFjAy2JL7H0EmsSeOFfCgzw==
   dependencies:
     "@babel/runtime" "^7.10.1"
     classnames "2.x"
@@ -8470,19 +8516,27 @@ rc-util@^5.0.0, rc-util@^5.0.1, rc-util@^5.0.5, rc-util@^5.0.6, rc-util@^5.0.7:
     react-is "^16.12.0"
     shallowequal "^1.1.0"
 
-rc-virtual-list@^1.1.2:
-  version "1.1.6"
-  resolved "https://npm.office.infomaximum.com/rc-virtual-list/-/rc-virtual-list-1.1.6.tgz#b255baf9aacde149a8893324e6307214094f4c0a"
-  integrity sha512-u3+izqWL8p8bQy8nYH48qWpiGyxR/ye8D2k0zJlXmfYeL55/xh83YrzHqiDzO78uj0Ewag3nXDA0JTVrYO7ygQ==
+rc-util@^5.0.4:
+  version "5.1.0"
+  resolved "https://npm.office.infomaximum.com/rc-util/-/rc-util-5.1.0.tgz#a525440d5138e6b2b68dfb61ca16dc4213bdb815"
+  integrity sha512-uxkO3WRjHKcwrqpkVs1sk0DOq0X3BQ/J+Kjgql05Zhrs5wqxWVn5bvTmdKHJ/zUjHLaHm/NfPe07YfD9/NK6vQ==
   dependencies:
-    classnames "^2.2.6"
-    raf "^3.4.1"
-    rc-util "^5.0.0"
+    react-is "^16.12.0"
+    shallowequal "^1.1.0"
 
 rc-virtual-list@^2.1.1, rc-virtual-list@^2.1.5:
   version "2.1.5"
   resolved "https://npm.office.infomaximum.com/rc-virtual-list/-/rc-virtual-list-2.1.5.tgz#f065e9835e16c612525e884662a886a25e4ff793"
   integrity sha512-4jcNyR74cHfEEk25xjVfjYh6RsgK22XRApz0VpMPyygUnEpm0+44w3OP8S9vsFq3QAWUpOmW4kwp3ESJ917aaw==
+  dependencies:
+    classnames "^2.2.6"
+    rc-resize-observer "^0.2.3"
+    rc-util "^5.0.7"
+
+rc-virtual-list@^3.0.3:
+  version "3.0.8"
+  resolved "https://npm.office.infomaximum.com/rc-virtual-list/-/rc-virtual-list-3.0.8.tgz#6ab9e2b9867a200868aca310926a0426902506e8"
+  integrity sha512-BiktOn4Pv9i7M7/JoL3i/H92FwRZoM0IX5dXtSneCFzQRvmau4Y7PoUIlFEG0VAjbH9BuRh+oQamf5r+9Byv6w==
   dependencies:
     classnames "^2.2.6"
     rc-resize-observer "^0.2.3"
@@ -8578,7 +8632,7 @@ react-router@5.2.0:
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
 
-react@16.13.1, react@^16.0.0:
+react@16.13.1:
   version "16.13.1"
   resolved "https://npm.office.infomaximum.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
   integrity sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==
@@ -9012,12 +9066,12 @@ sass-graph@2.2.5:
     scss-tokenizer "^0.2.3"
     yargs "^13.3.2"
 
-sass-loader@9.0.3:
-  version "9.0.3"
-  resolved "https://npm.office.infomaximum.com/sass-loader/-/sass-loader-9.0.3.tgz#086adcf0bfdcc9d920413e2cdc3ba3321373d547"
-  integrity sha512-fOwsP98ac1VMme+V3+o0HaaMHp8Q/C9P+MUazLFVi3Jl7ORGHQXL1XeRZt3zLSGZQQPC8xE42Y2WptItvGjDQg==
+sass-loader@10.0.1:
+  version "10.0.1"
+  resolved "https://npm.office.infomaximum.com/sass-loader/-/sass-loader-10.0.1.tgz#10c0364d8034f22fee25ddcc9eded20f99bbe3b4"
+  integrity sha512-b2PSldKVTS3JcFPHSrEXh3BeAfR7XknGiGCAO5aHruR3Pf3kqLP3Gb2ypXLglRrAzgZkloNxLZ7GXEGDX0hBUQ==
   dependencies:
-    klona "^1.1.2"
+    klona "^2.0.3"
     loader-utils "^2.0.0"
     neo-async "^2.6.2"
     schema-utils "^2.7.0"
@@ -10073,10 +10127,10 @@ tryer@^1.0.1:
   resolved "https://registry.yarnpkg.com/tryer/-/tryer-1.0.1.tgz#f2c85406800b9b0f74c9f7465b81eaad241252f8"
   integrity sha512-c3zayb8/kWWpycWYg87P71E1S1ZL6b6IJxfb5fvsUgsf0S2MVGaDhDXXjDMpdCpfWXqptc+4mXwmiy1ypXqRAA==
 
-ts-loader@8.0.2:
-  version "8.0.2"
-  resolved "https://npm.office.infomaximum.com/ts-loader/-/ts-loader-8.0.2.tgz#ee73ca9350f745799396fff8578ba29b1e95616b"
-  integrity sha512-oYT7wOTUawYXQ8XIDsRhziyW0KUEV38jISYlE+9adP6tDtG+O5GkRe4QKQXrHVH4mJJ88DysvEtvGP65wMLlhg==
+ts-loader@8.0.3:
+  version "8.0.3"
+  resolved "https://npm.office.infomaximum.com/ts-loader/-/ts-loader-8.0.3.tgz#56858f4296edf1ed55e01f8520552984d3f0911c"
+  integrity sha512-wsqfnVdB7xQiqhqbz2ZPLGHLPZbHVV5Qn/MNFZkCFxRU1miDyxKORucDGxKtsQJ63Rfza0udiUxWF5nHY6bpdQ==
   dependencies:
     chalk "^2.3.0"
     enhanced-resolve "^4.0.0"
@@ -10134,10 +10188,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@3.9.7:
-  version "3.9.7"
-  resolved "https://npm.office.infomaximum.com/typescript/-/typescript-3.9.7.tgz#98d600a5ebdc38f40cb277522f12dc800e9e25fa"
-  integrity sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
+typescript@4.0.2:
+  version "4.0.2"
+  resolved "https://npm.office.infomaximum.com/typescript/-/typescript-4.0.2.tgz#7ea7c88777c723c681e33bf7988be5d008d05ac2"
+  integrity sha512-e4ERvRV2wb+rRZ/IQeb3jm2VxBsirQLpQhdxplZ2MEzGvDkkMmPglecnNDfSUBivMjP93vRbngYYDQqQ/78bcQ==
 
 uglify-js@^3.1.4:
   version "3.7.2"
@@ -10505,10 +10559,10 @@ webpack-log@^2.0.0:
     ansi-colors "^3.0.0"
     uuid "^3.3.2"
 
-webpack-merge@5.1.1:
-  version "5.1.1"
-  resolved "https://npm.office.infomaximum.com/webpack-merge/-/webpack-merge-5.1.1.tgz#c79f36b4ad39a597c3bb780f809b514d65d85d01"
-  integrity sha512-UhIkHAVqeG9EqFfYo7dRELrVfH6HYaOTYM7ssKCwfIIHYnWepGVOFp1E166GwgPGFqV6M68UgRiKOERjVOKIXA==
+webpack-merge@5.1.2:
+  version "5.1.2"
+  resolved "https://npm.office.infomaximum.com/webpack-merge/-/webpack-merge-5.1.2.tgz#21dc1ed0e860c305cf5a07a48750f53a99750855"
+  integrity sha512-/slG0Kh0OKTf0zxdFJlhQHzv8bU9gUYVK5DkBjB3i/yoc1Xx4ADG0KITGO5S/6cqn2Ug43+8VR6Sz8daA/c+5g==
   dependencies:
     clone-deep "^4.0.1"
     wildcard "^2.0.0"
@@ -10732,6 +10786,11 @@ yallist@^3.0.0, yallist@^3.0.2, yallist@^3.0.3:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-3.1.1.tgz#dbb7daf9bfd8bac9ab45ebf602b8cbad0d5d08fd"
   integrity sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==
+
+yaml@^1.10.0:
+  version "1.10.0"
+  resolved "https://npm.office.infomaximum.com/yaml/-/yaml-1.10.0.tgz#3b593add944876077d4d683fee01081bd9fff31e"
+  integrity sha512-yr2icI4glYaNG+KWONODapy2/jDdMSDnrONSjblABjD9B4Z5LgiircSt8m8sRZFNi08kG9Sm0uSHtEmP3zaEGg==
 
 yaml@^1.7.2:
   version "1.7.2"
