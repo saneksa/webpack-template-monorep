@@ -1,5 +1,6 @@
 import { Expander, Injectable } from "@monorep/core";
 import "antd/dist/antd.css";
+import { observer } from "mobx-react";
 import type { FC } from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Link, Route, Switch, useLocation } from "react-router-dom";
@@ -8,7 +9,9 @@ import App from "./containers/App/App";
 
 const expanderInstance = Expander.getInstance();
 
-const Component: FC<{ routes: any[] }> = ({ routes }) => {
+const Component: FC = observer(() => {
+  const routes = expanderInstance.routes;
+
   const location = useLocation();
 
   return (
@@ -40,14 +43,12 @@ const Component: FC<{ routes: any[] }> = ({ routes }) => {
       </div>
     </>
   );
-};
+});
 
 export const rootEntryPoint = () => {
-  const routes = expanderInstance.getRoutes();
-
   render(
     <BrowserRouter>
-      <Component routes={routes} />
+      <Component />
     </BrowserRouter>,
     document.getElementById("root")
   );

@@ -1,3 +1,4 @@
+import { observer } from "mobx-react";
 import React from "react";
 import type { RouteComponentProps } from "react-router";
 import "./App.less";
@@ -19,4 +20,4 @@ class App extends React.PureComponent<IAppProps> {
   }
 }
 
-export default App;
+export default observer(App);

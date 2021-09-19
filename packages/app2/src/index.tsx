@@ -1,7 +1,6 @@
-import * as React from "react";
-import { Route } from "react-router-dom";
-import { ModuleExpander, Expander, Injectable } from "@monorep/core";
 import type { IModuleExpander } from "@monorep/core";
+import { Injectable, ModuleExpander } from "@monorep/core";
+import { Route } from "react-router-dom";
 
 export const app2GetRoutes = () => {
   return [
