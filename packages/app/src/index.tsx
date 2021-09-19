@@ -1,10 +1,9 @@
-import * as React from "react";
-import { render } from "react-dom";
-import App from "./containers/App/App";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import "antd/dist/antd.css";
-import { ModuleExpander, IModuleExpander } from "../../core/src/ModuleExpander";
 import { Expander, Injectable } from "@monorep/core";
+import "antd/dist/antd.css";
+import { render } from "react-dom";
+import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
+import { IModuleExpander, ModuleExpander } from "../../core/src/ModuleExpander";
+import App from "./containers/App/App";
 
 const expanderInstance = Expander.getInstance();
 
@@ -32,7 +31,7 @@ export const appRoutes = () => {
       path="/"
       exact={true}
     />,
-    <Route key="app" component={App} path="/a" exact={true} />,
+    <Route key="app" render={(props) => <App {...props} />} path="/a" exact={true} />,
     <Route key="b" path="/b" component={() => <div>Ghddf</div>} exact={true} />,
   ];
 };

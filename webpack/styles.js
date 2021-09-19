@@ -1,58 +1,56 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = (isDev) => {
+  const isProd = !isDev;
+
   return {
     module: {
       rules: [
         {
-          test: /\.(sa|sc|c)ss$/,
+          test: /\.css$/,
           use: [
-            isDev
-              ? "style-loader"
-              : {
-                  loader: MiniCssExtractPlugin.loader,
-                  options: {
-                    hmr: false,
-                  },
-                },
+            isDev ? require.resolve("style-loader") : MiniCssExtractPlugin.loader,
+            require.resolve("css-loader"),
             {
-              loader: require.resolve("css-loader"),
+              loader: require.resolve("postcss-loader"),
               options: {
-                importLoaders: 1,
-                modules: {
-                  localIdentName: "[name]__[local]___[hash:base64:5]",
+                postcssOptions: {
+                  plugins: [require.resolve("postcss-preset-env")],
                 },
               },
             },
-            {
-              loader: "postcss-loader",
-              options: {
-                plugins: () => [require("autoprefixer")],
-              },
-            },
-            "sass-loader",
           ],
         },
         {
           test: /\.less$/,
           use: [
-            isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-            "css-loader",
+            isDev ? require.resolve("style-loader") : MiniCssExtractPlugin.loader,
+            require.resolve("css-loader"),
             {
-              loader: "postcss-loader",
+              loader: require.resolve("postcss-loader"),
               options: {
-                plugins: () => [require("autoprefixer")],
+                postcssOptions: {
+                  plugins: [require.resolve("postcss-preset-env")],
+                },
               },
             },
-            "less-loader",
+            {
+              loader: require.resolve("less-loader"),
+              options: {
+                sourceMap: isDev,
+                lessOptions: {
+                  javascriptEnabled: true,
+                },
+              },
+            },
           ],
         },
       ],
     },
     plugins: [
       new MiniCssExtractPlugin({
-        filename: "/static/css/[name].css",
-        chunkFilename: "/static/css/[id].css",
+        filename: `/static/css/${isProd ? "[name].[contenthash]" : "[name]"}.css`,
+        chunkFilename: `/static/css/${isProd ? "[id].[contenthash]" : "[id]"}.css`,
         ignoreOrder: true,
       }),
     ],

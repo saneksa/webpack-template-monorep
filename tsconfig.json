@@ -3,8 +3,10 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "moduleResolution": "node",
-    "jsx": "react",
+    "lib": ["DOM", "ESNext"],
+    "jsx": "react-jsx",
     "strict": true,
+    "exactOptionalPropertyTypes": true,
     "target": "ES2015",
     "checkJs": false,
     "module": "ESNext",
@@ -13,8 +15,7 @@
     "allowSyntheticDefaultImports": true,
     "importsNotUsedAsValues": "error",
     "skipLibCheck": true,
-    "locale": "ru",
-    "types": ["@types/webpack-env"]
+    "locale": "ru"
   },
   "exclude": ["node_modules"]
 }

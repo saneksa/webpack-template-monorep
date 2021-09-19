@@ -1,19 +1,19 @@
 import React from "react";
+import type { RouteComponentProps } from "react-router";
 import "./App.less";
-import "./App.sass";
-const s = require("./App.css");
 
-console.warn(s);
+interface IAppProps extends RouteComponentProps {}
 
-class App extends React.PureComponent {
+class App extends React.PureComponent<IAppProps> {
   private getContent() {
-    return <div className=".ccc">Content</div>;
+    return <div>Content</div>;
   }
 
   public render() {
+    this.props.staticContext;
     return (
-      <div className={s.vvv}>
-        <div className="cds">{this.getContent()}</div>
+      <div>
+        <div>{this.getContent()}</div>
       </div>
     );
   }

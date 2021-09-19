@@ -7,9 +7,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const minimizer = require("./webpack/minimizer");
 const devServer = require("./webpack/devServer");
-const overlay = require("./webpack/overlay");
 const bundleAnalyzer = require("./webpack/bundleAnalyzer");
-const duplicatePackage = require("./webpack/duplicatePackage");
 const babelLoader = require("./webpack/babel");
 const styles = require("./webpack/styles");
 const _ = require("lodash");
@@ -26,6 +24,7 @@ const common = (mode) => {
 
   return merge([
     {
+      mode,
       entry: {
         index: `${PATHS.packages}/core/src/index.ts`,
       },
@@ -52,16 +51,7 @@ const common = (mode) => {
             test: /\.(js|jsx|ts|tsx)$/,
             exclude: /node_modules/,
             use: [
-              // babelLoader(isDev), //должен быть последним (1м в списке)
-              { loader: "cache-loader" },
-              {
-                loader: "thread-loader",
-                options: {
-                  // there should be 1 cpu for the fork-ts-checker-webpack-plugin
-                  workers: os.cpus().length - 1,
-                  poolTimeout: Infinity,
-                },
-              },
+              babelLoader(isDev), //должен быть последним (1м в списке)
               {
                 loader: "ts-loader",
                 options: {
@@ -101,9 +91,8 @@ const common = (mode) => {
           },
         }),
       ],
-      performance: {
-        hints: "warning",
-      },
+      devtool: isDev ? "cheap-module-source-map" : false,
+      stats: "none",
     },
   ]);
 };
@@ -118,9 +107,7 @@ module.exports = function (env, argv) {
       common(argv.mode),
       styles(true),
       devServer(),
-      overlay,
-      bundleAnalyzer(PATHS.bundleAnalyzer),
-      duplicatePackage,
+      // bundleAnalyzer(PATHS.bundleAnalyzer),
     ]);
   }
 };
