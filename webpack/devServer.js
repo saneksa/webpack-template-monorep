@@ -1,5 +1,7 @@
 module.exports = function () {
   return {
-    devServer: {},
+    devServer: {
+      historyApiFallback: true,
+    },
   };
 };
