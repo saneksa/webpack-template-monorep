@@ -1,19 +1,53 @@
 import { Expander, Injectable } from "@monorep/core";
 import "antd/dist/antd.css";
+import type { FC } from "react";
 import { render } from "react-dom";
-import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Link, Route, Switch, useLocation } from "react-router-dom";
 import { IModuleExpander, ModuleExpander } from "../../core/src/ModuleExpander";
 import App from "./containers/App/App";
 
 const expanderInstance = Expander.getInstance();
 
+const Component: FC<{ routes: any[] }> = ({ routes }) => {
+  const location = useLocation();
+
+  return (
+    <>
+      <div style={{ marginBottom: "24px" }}>
+        {routes.map((el) => (
+          <span key={el.props.path}>
+            <span
+              style={
+                el.props.path === location.pathname
+                  ? {
+                      backgroundColor: "blue",
+                    }
+                  : undefined
+              }
+            >
+              <Link style={{ padding: "12px" }} to={el.props.path}>
+                {el.props.path}
+              </Link>
+            </span>
+          </span>
+        ))}
+      </div>
+      <div>
+        <Switch key="1">
+          {routes}
+          <Route key="404" path="*" component={() => <div>404</div>} />
+        </Switch>
+      </div>
+    </>
+  );
+};
+
 export const rootEntryPoint = () => {
+  const routes = expanderInstance.getRoutes();
+
   render(
     <BrowserRouter>
-      <Switch key="1">
-        {expanderInstance.getRoutes()}
-        <Route key="404" path="*" component={() => <div>404</div>} />
-      </Switch>
+      <Component routes={routes} />
     </BrowserRouter>,
     document.getElementById("root")
   );

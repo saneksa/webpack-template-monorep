@@ -1,8 +1,8 @@
 import { forEach } from "lodash";
 import { Expander } from "./Expander";
-import { ModuleExpander } from "./ModuleExpander";
-import type { IModuleExpander } from "./ModuleExpander";
 import { Injectable } from "./Injectable";
+import type { IModuleExpander } from "./ModuleExpander";
+import { ModuleExpander } from "./ModuleExpander";
 
 const appModule = () => import("@monorep/app");
 const app2Module = () => import("@monorep/app2");
@@ -31,9 +31,9 @@ const getSubsystems = async () => {
       promises.push(module);
     });
 
-    Promise.all(promises).then(() => {
-      Expander.getInstance().build();
-    });
+    await Promise.all(promises);
+
+    Expander.getInstance().build();
   } catch (error) {
     console.warn("Ошибка загрузки списка модулей ", error);
   }
@@ -42,5 +42,4 @@ const getSubsystems = async () => {
 getSubsystems();
 
 export { Expander, ModuleExpander, Injectable };
-
 export type { IModuleExpander };
