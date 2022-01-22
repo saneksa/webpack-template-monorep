@@ -49,8 +49,8 @@ module.exports = (isDev) => {
     },
     plugins: [
       new MiniCssExtractPlugin({
-        filename: `/static/css/${isProd ? "[name].[contenthash]" : "[name]"}.css`,
-        chunkFilename: `/static/css/${isProd ? "[id].[contenthash]" : "[id]"}.css`,
+        filename: `./static/css/${isProd ? "[name].[contenthash]" : "[name]"}.css`,
+        chunkFilename: `./static/css/${isProd ? "[id].[contenthash]" : "[id]"}.css`,
         ignoreOrder: true,
       }),
     ],

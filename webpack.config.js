@@ -3,7 +3,6 @@ const os = require("os");
 const webpack = require("webpack");
 const { merge } = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const minimizer = require("./webpack/minimizer");
 const devServer = require("./webpack/devServer");
@@ -32,6 +31,7 @@ const common = (mode) => {
         path: PATHS.buildPath,
         filename: isDev ? "./static/js/[name].js" : "static/js/[contenthash].js",
         chunkFilename: isDev ? "./static/js/[name].[id].js" : "static/js/[contenthash].js",
+        clean: true,
       },
       optimization: {
         splitChunks: {
@@ -64,7 +64,6 @@ const common = (mode) => {
         ],
       },
       plugins: [
-        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
           template: `${PATHS.publicPath}/index.html`,
           inject: true,

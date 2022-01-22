@@ -10,7 +10,7 @@ module.exports = {
       cacheGroups: {
         defaultVendors: {
           test: /[\\/]node_modules[\\/]/,
-          name: "node_modules",
+          name: "vendors",
         },
       },
     },
