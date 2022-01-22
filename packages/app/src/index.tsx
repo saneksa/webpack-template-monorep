@@ -67,7 +67,7 @@ export const appRoutes = () => {
       exact={true}
     />,
     <Route key="app" render={(props) => <App {...props} />} path="/a" exact={true} />,
-    <Route key="b" path="/b" component={() => <div>Ghddf</div>} exact={true} />,
+    <Route key="b" path="/b" component={() => <div>Gh222ddf</div>} exact={true} />,
   ];
 };
 
